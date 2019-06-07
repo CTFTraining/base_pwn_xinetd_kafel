@@ -1,0 +1,39 @@
+version: "2"
+services:
+  base_pwn_x64:
+    build:
+      context: .
+      dockerfile: base_x64.Dockerfile
+    image: ctftraining/base_pwn_xinetd_kafel:x64
+
+  base_pwn_x86:
+    build:
+      context: .
+      dockerfile: base_x86.Dockerfile
+    image: ctftraining/base_pwn_xinetd_kafel:x86
+
+  pwn_x64:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ctftraining/pwn_test_x64
+    volumes:
+      - ./tcpdump:/var/lib/tcpdump
+    ports:
+      - "10000:10000"
+    environment:
+      - FLAG=ctftraining{base_pwn_xinetd_kafel:x64}
+      - TCPDUMP_ENABLE=1
+
+  pwn_x86:
+    build:
+      context: .
+      dockerfile: x86.Dockerfile
+    image: ctftraining/pwn_test_x86
+    volumes:
+      - ./tcpdump:/var/lib/tcpdump
+    ports:
+      - "10000:10000"
+    environment:
+      - FLAG=ctftraining{base_pwn_xinetd_kafel:x86}
+      - TCPDUMP_ENABLE=1
