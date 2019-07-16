@@ -1,5 +1,5 @@
 default: 
-	gcc -o src/pwn tests/pwn.c
+	gcc -o ../src/pwn pwn.c
 
 clean:
-	rm src/pwn
+	rm ../src/pwn

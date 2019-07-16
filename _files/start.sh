@@ -11,8 +11,6 @@ fi
 
 if [ -z $TCPDUMP_ENABLE ]; then
     echo "Set TCPDUMP_ENABLE to enable packet capture."
-    sv stop tcpdump
-    sleep 1d
 else
 	TCPDUMP_DIR=/var/lib/tcpdump
 	if [ -z $TCPDUMP_ROTATE_SEC ]; then
