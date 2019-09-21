@@ -1,8 +1,8 @@
 #!/bin/bash
 
-echo $FLAG > /flag
+echo $FLAG > /home/ctf/flag
 
-chmod 740 /flag
+chmod 444 /home/ctf/flag
 
 export FLAG=not_flag
 FLAG=not_flag

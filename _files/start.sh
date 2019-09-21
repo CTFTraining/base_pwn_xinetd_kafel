@@ -5,7 +5,7 @@ if [[ -f /flag.sh ]]; then
 fi
 
 if [[ -f /home/ctf/pwn ]]; then
-	chown -R root:ctf /home/ctf
+	chown root:ctf /home/ctf/pwn
 	chmod 750 /home/ctf/pwn
 fi
 
@@ -25,6 +25,10 @@ fi
 export FLAG=not_flag
 FLAG=not_flag
 
+echo "Start Run xinetd"
 exec /usr/sbin/xinetd -dontfork -stayalive -inetd_compat &
 
-tail -f /dev/null
+sleep 5s
+echo "Xinetd Running..."
+
+tail -F /var/log/xinetd.log
