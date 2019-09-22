@@ -1,4 +1,4 @@
-FROM ctftraining/base_pwn_xinetd_kafel_debug
+FROM ctftraining/base_pwn_xinetd_kafel
 
 COPY src /tmp/
 

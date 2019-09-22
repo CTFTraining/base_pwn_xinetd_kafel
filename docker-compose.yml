@@ -11,7 +11,7 @@ services:
     build:
       context: .
       dockerfile: example.Dockerfile
-    image: ctftraining/pwn_test
+    image: ctftraining/pwn_kafel_test
     volumes:
       - ./tcpdump:/var/lib/tcpdump
     ports:
