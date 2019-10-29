@@ -6,8 +6,12 @@ A docker image to hold pwn challenges in ctf war
 
 ## Usage
 
-Please check *.Dockerfile
 
+
+1. Copy your `pwn`  file to src/
+2. Change  FLAG in `docker-compose.yml`
+3. `docker-compose up -d`
+4. You can delete `_files`, `Dockerfile` and `test`, but `src` is requied
 ## Env Vars
 
 | Key                | Default Value    | Description                                                |
